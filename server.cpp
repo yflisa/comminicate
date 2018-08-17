@@ -275,46 +275,6 @@ int CreateUdpServer()
 		return -1;
 	}
 	    
-//    sockaddr_in tRemoteAddr;
-//	memset(&tRemoteAddr, 0, sizeof(tRemoteAddr));
-//    int nAddrLen = sizeof(tRemoteAddr); 
-//    while (true)
-//    {
-//        char achRecvData[255]; 
-//		memset(&achRecvData, 0, sizeof(achRecvData));
-//        int ret = recvfrom(nSerUdpSocket, achRecvData, 255, 0, (sockaddr *)&tRemoteAddr, &nAddrLen);
-//        if (ret > 0)
-//        {
-//            achRecvData[ret] = 0x00;
-//        }
-
-//		//打开文件
-//        char * pchSendData = NULL;
-//		const char * pchFileName = "a";
-//		int nFileLen = 0;
-//		FILE *pFile = NULL;
-//		pFile = fopen(pchFileName, "rb");
-//		if(NULL == pFile)
-//		{
-//			return -1;
-//		}
-//		fseek(pFile, 0, SEEK_END);
-//		nFileLen = ftell(pFile);
-//		fseek(pFile, 0, SEEK_SET);
-//		pchSendData = (char*)malloc(nFileLen);
-//		if(NULL == pchSendData)
-//		{
-//			return -1;
-//		}
-
-//		int nRet = fread(pchSendData, 1, nFileLen, pFile);
-//        sendto(nSerUdpSocket, pchSendData, strlen(pchSendData), 0, (sockaddr *)&tRemoteAddr, nAddrLen); 
-//		free(pchSendData);
-//		pchSendData = NULL;
-//		fclose(pFile);
-//		pFile = NULL;
-
-//    }
     closesocket(nSerUdpSocket); 
     WSACleanup();
     return 0;
